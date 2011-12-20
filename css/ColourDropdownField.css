@@ -1,0 +1,13 @@
+/* fancy dropdown / background */
+.sbSelector {
+	background-image: url(/themes/main/images/dropdownBkgd.png); background-color: transparent;background-position: left top; background-repeat: no-repeat;
+	border: none!important; height: 20px!important;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;
+	padding-top: 5px!important; padding-right: 30px!important; padding-bottom: 5px!important; padding-left: 5px!important ;
+	display: block;
+	overflow: hidden;
+}
+#Form_VariationForm .sbSelector {background-color: #1F2222; width: 102px; background-image: url(/themes/main/images/dropdownBkgd.png); color: #fff;}
+
+.sbOptions {width: 130px!important;background-color: #000; -webkit-border-radius: 2px 2px 8px 8px;-moz-border-radius: 2px 2px 8px 8px;border-radius: 2px 2px 8px 8px; margin-bottom: 0.2em;}
+		.sbOptions li {line-height: 1!important; margin: 0!important; color: #c5c6c6!important; padding: 3px 3px 6px 5px; }
+		.sbOptions li:hover {background-color: #282c2c; color: #FFF!important;}
