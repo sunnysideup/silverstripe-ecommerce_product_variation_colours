@@ -2,18 +2,27 @@
 
 class ProductAttributeDecoratorColour_Value extends DataObjectDecorator {
 
-	protected static $colour_array = array();
-		static function get_colour_array() {return self::$colour_array;}
-
-	protected static $default_contrast_colour = "FFFFFF";
-		static function get_default_contrast_colour() {return self::$default_contrast_colour;}
-		static function set_default_contrast_colour($s) {self::$default_contrast_colour = $s;}
-
+	/**
+	 * default colour for font (fore colour) for displaying colours
+	 * @var String
+	 */
 	protected static $default_colour = "000000";
 		static function get_default_colour() {return self::$default_colour;}
 		static function set_default_colour($s) {self::$default_colour = $s;}
 
-	//the following option will only work if you turn your dropdown into a list using JS
+	/**
+	 * default background for displaying colours
+	 * @var String
+	 */
+	protected static $default_contrast_colour = "FFFFFF";
+		static function get_default_contrast_colour() {return self::$default_contrast_colour;}
+		static function set_default_contrast_colour($s) {self::$default_contrast_colour = $s;}
+
+
+	/**
+	 * add styling to dropdowns option values?
+	 * @var Boolean
+	 */
 	protected static $put_styling_in_dropdown_options = false;
 		static function get_put_styling_in_dropdown_options() {return self::$put_styling_in_dropdown_options;}
 		static function set_put_styling_in_dropdown_options($b) {self::$put_styling_in_dropdown_options = $b;}
@@ -86,12 +95,22 @@ class ProductAttributeDecoratorColour_Type extends DataObjectDecorator {
 		);
 	}
 
-
 	function updateCMSFields(FieldSet &$fields) {
 		$fields->addFieldToTab("Root.Colour", new CheckboxField("IsColour", _t("ProductAttributeDecoratorColour.ISCOLOUR", "Is Colour")));
 	}
 
-	function updateDropDownField($field){
-
+	function updateDropDownField(&$field){
+		if(ProductAttributeDecoratorColour_Value::get_put_styling_in_dropdown_options()) {
+			$newField = new ColourDropdownField(
+				$name = $field->Name(),
+				$title = $field->Title(),
+				$source = $field->getSource(),
+				$value = $field->Value(),
+				null,
+				$emptyString = $field->getEmptyString()
+			);
+			$field = $newField;
+			return $field;
+		}
 	}
 }
