@@ -54,19 +54,20 @@ class ColourDropdownField extends DropdownField {
 
 					$this->isSelected = ($selected) ? true : false;
 				}
-
-				$domd->loadHTML($title);
-
-				$domx = new DOMXPath($domd);
-				$items = $domx->query("//span[@style]");
 				$style = "";
-				foreach($items as $item) {
-					foreach ($item->attributes as $attrName => $attrNode) {
-						if($attrName == "style")
-							$style = $attrNode->nodeValue;
+				if($title) {
+					$domd->loadHTML($title);
+
+					$domx = new DOMXPath($domd);
+					$items = $domx->query("//span[@style]");
+					$style = "";
+					foreach($items as $item) {
+						foreach ($item->attributes as $attrName => $attrNode) {
+							if($attrName == "style")
+								$style = $attrNode->nodeValue;
+						}
 					}
 				}
-
 
 				$options .= $this->createTag(
 					'option',
