@@ -47,7 +47,8 @@ class ColourDropdownField extends DropdownField {
 					// Normal value from the source
 					if($value) {
 						$selected = ($value == $this->value) ? 'selected' : null;
-					} else {
+					}
+					else {
 						// Do a type check comparison, we might have an array key of 0
 						$selected = ($value === $this->value) ? 'selected' : null;
 					}
@@ -57,7 +58,6 @@ class ColourDropdownField extends DropdownField {
 				$style = "";
 				if($title) {
 					$domd->loadHTML($title);
-
 					$domx = new DOMXPath($domd);
 					$items = $domx->query("//span[@style]");
 					$style = "";
@@ -67,18 +67,23 @@ class ColourDropdownField extends DropdownField {
 								$style = $attrNode->nodeValue;
 						}
 					}
+					$options .= $this->createTag(
+						'option',
+						array(
+							'selected' => $selected,
+							'value' => $value,
+							'style' => $style,
+							'rel' => $style
+						),
+						$this->createTag(
+							'span',
+							array(
+								'style' => $style,
+							),
+							strip_tags($title)
+						)
+					);
 				}
-
-				$options .= $this->createTag(
-					'option',
-					array(
-						'selected' => $selected,
-						'value' => $value,
-						'style' => $style,
-						'rel' => $style
-					),
-					$title
-				);
 			}
 		}
 
