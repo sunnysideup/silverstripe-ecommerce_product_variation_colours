@@ -1,6 +1,7 @@
 <?php
 
 //copy the lines between the START AND END line to your /mysite/_config.php file and choose the right settings
+
 // __________________________________ START ECOMMERCE PRODUCT VARIATIONS COLOUR MODULE CONFIG __________________________________
 //MUST SET
 //Object::add_extension("ProductAttributeValue", "ProductAttributeDecoratorColour_Value");
