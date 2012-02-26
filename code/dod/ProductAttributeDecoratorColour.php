@@ -58,19 +58,22 @@ class ProductAttributeDecoratorColour_Value extends DataObjectDecorator {
 	}
 
 	function ComputedRGBCode() {
-		$v = $this->owner->RGBCode;
-		if(!$v) {
-			$v = self::get_default_colour();
+		$colourCode = $this->owner->RGBCode;
+		if(!$colourCode) {
+			$colourCode = $this->IsHtmlColour($this->owner->Title);
+			if(!$colourCode) {
+				$colourCode = self::get_default_colour();
+			}
 		}
-		return $v;
+		return $colourCode;
 	}
 
 	function ComputedContrastRGBCode() {
-		$v = $this->owner->ContrastRGBCode;
-		if(!$v) {
-			$v = self::get_default_contrast_colour();
+		$colourCode = $this->owner->ContrastRGBCode;
+		if(!$colourCode) {
+			$colourCode = self::get_default_contrast_colour();
 		}
-		return $v;
+		return $colourCode;
 	}
 
 	function updateValueForDropdown(&$v, $forceUpdate = false) {
@@ -83,6 +86,18 @@ class ProductAttributeDecoratorColour_Value extends DataObjectDecorator {
 		return $v;
 	}
 
+	/**
+	 * it checks if the colourName exists and returns the colour code or an empty string if it does not exist
+	 * "black" should return either #000000
+	 * "blabla" should return ""
+	 * @param String $colourName word for the colour (e.g. black)
+	 *
+	 * @return String
+	 */
+	protected function IsHtmlColour($colourName) {
+		//@todo write actual code
+		return strtolower($colourName);
+	}
 }
 
 class ProductAttributeDecoratorColour_Type extends DataObjectDecorator {
