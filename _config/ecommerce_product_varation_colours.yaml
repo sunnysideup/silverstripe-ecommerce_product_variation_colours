@@ -1,0 +1,6 @@
+ColourDropdownField:
+	js_location_for_select_styling: ecommerce_product_variation_colours/javascript/ColourDropdownField.js
+ProductAttributeDecoratorColour_Value:
+	default_colour: 000000
+	default_contrast_colour: FFFFFF
+	put_styling_in_dropdown_options: false
