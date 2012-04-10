@@ -91,11 +91,9 @@ class ProductAttributeDecoratorColour_Value extends DataObjectDecorator {
 	 * "black" should return either #000000
 	 * "blabla" should return ""
 	 * @param String $colourName word for the colour (e.g. black)
-	 *
 	 * @return String
 	 */
 	protected function IsHtmlColour($colourName) {
-		//@todo write actual code
 		return strtolower($colourName);
 	}
 }
