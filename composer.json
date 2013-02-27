@@ -1,5 +1,5 @@
 {
-	"name": "silverstripe/ecommerce_product_variation_colours",
+	"name": "sunnysideup/ecommerce_product_variation_colours",
 	"type": "silverstripe-module",
 	"description": "add colours to your silverstripe e-commerce product variations for use in, for example, clothing stores.",
 	"homepage": "http://www.silverstripe-ecommerce.com",
