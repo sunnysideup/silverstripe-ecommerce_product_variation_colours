@@ -1,21 +1,28 @@
 {
-	"name": "sunnysideup/ecommerce_product_variation_colours",
-	"type": "silverstripe-module",
-	"description": "add colours to your silverstripe e-commerce product variations for use in, for example, clothing stores.",
-	"homepage": "http://www.silverstripe-ecommerce.com",
-	"keywords": ["ecommerce", "e-commerce", "shop", "product variation colours", "variation colours", "colours", "product colours","silverstripe"],
-	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
-	"authors":[
-		{
-			"name": "Nicolaas Francken",
-			"homepage": "https://github.com/sunnysideup",
-			"email" : "modules@sunnysideup.co.nz",
-			"role" : "lead developer"
-		}
-	],
-	"require":{
-		"php": ">=5.3.2",
-		"silverstripe/framework": "~2.4",
-		"sunnysideup/ecommerce": "~2.4"
-	}
+    "name": "sunnysideup/ecommerce_product_variation_colours",
+    "type": "silverstripe-module",
+    "description": "add colours to your silverstripe e-commerce product variations for use in, for example, clothing stores.",
+    "keywords": [
+        "ecommerce",
+        "e-commerce",
+        "shop",
+        "product variation colours",
+        "variation colours",
+        "colours",
+        "product colours",
+        "silverstripe"
+    ],
+    "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
+    "authors": [
+        {
+            "name": "Nicolaas Francken",
+            "email": "modules@sunnysideup.co.nz",
+            "role": "lead developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "silverstripe/framework": "~2.4",
+        "sunnysideup/ecommerce": "~2.4"
+    }
 }
