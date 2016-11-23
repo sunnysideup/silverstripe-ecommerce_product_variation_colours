@@ -3,14 +3,16 @@
     "type": "silverstripe-module",
     "description": "add colours to your silverstripe e-commerce product variations for use in, for example, clothing stores.",
     "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
         "ecommerce",
         "e-commerce",
         "shop",
         "product variation colours",
         "variation colours",
         "colours",
-        "product colours",
-        "silverstripe"
+        "product colours"
     ],
     "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
     "authors": [
@@ -23,6 +25,7 @@
     "require": {
         "php": ">=5.3.2",
         "silverstripe/framework": "~2.4",
-        "sunnysideup/ecommerce": "~2.4"
+        "sunnysideup/ecommerce": "~2.4",
+        "silverstripe/cms": "~2.4"
     }
 }
